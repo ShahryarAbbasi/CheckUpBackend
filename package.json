@@ -8,5 +8,9 @@
     "morgan": "^1.10.0",
     "nodemon": "^2.0.20",
     "passport": "^0.6.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   }
 }
