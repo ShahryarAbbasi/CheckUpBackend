@@ -12,10 +12,12 @@ app.use(morgan("dev"));
 const { PORT , MONGODB_URI } = process.env;
 const gamesController = require('./controllers/games-controller')
 const playersController = require('./controllers/players-controller')
+const userController = require('./controllers/auth-controllers')
 app.use(express.json())
 
 app.use('/games', gamesController)
 app.use('/players', playersController)
+app.use('/auth', userController)
             
 app.get('/', (req, res) => {
     res.send('CheckUp API')
