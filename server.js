@@ -9,8 +9,14 @@ require('./config/db.connection');
 app.use(cors()); 
 app.use(morgan("dev"));
 
-const { PORT } = process.env;
+const { PORT , MONGODB_URI } = process.env;
+const gamesController = require('./controllers/games-controller')
+const playersController = require('./controllers/players-controller')
+app.use(express.json())
 
+app.use('/games', gamesController)
+app.use('/players', playersController)
+            
 app.get('/', (req, res) => {
     res.send('CheckUp API')
 });

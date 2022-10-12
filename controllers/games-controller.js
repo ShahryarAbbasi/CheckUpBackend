@@ -6,7 +6,7 @@ const allGames = require('../models/games')
 router.get('/', async (req, res) => {
     try {
         const games = await allGames.find({})
-        res.json(books)
+        res.json(games)
     } catch (error) {
         console.log(error)
     }

@@ -11,4 +11,10 @@ const gamesSchema = new mongoose.Schema({
 
 const Game = mongoose.model('Game', gamesSchema)
 
-module.exports= Game
+module.exports = Game
+
+Game.create({
+    location: 'MAC',
+    time: 'today',
+    playersNeeded: 9
+})
