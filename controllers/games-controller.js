@@ -19,3 +19,29 @@ router.get('/:gameid', async (req, res) => {
         console.log(error)
     }
 })
+
+router.post('/', async(req, res) => {
+    try {
+        res.json(await allGames.create(req.body))
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+router.put('/:gameId', async (req, res) => {
+    try {
+        res.json(await allGames.findByIdAndUpdate(req.params.gameId, req.body))
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+router.delete('/:gameId', async (req, res) => {
+    try {
+        res.json(await allGames.findByIdAndDelete(req.params.bookId))
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+module.exports = router;
