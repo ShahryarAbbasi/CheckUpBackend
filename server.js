@@ -9,7 +9,8 @@ require('./config/db.connection');
 app.use(cors()); 
 app.use(morgan("dev"));
 
-const { PORT , MONGODB_URI } = process.env;
+const { MONGODB_URI } = process.env;
+const PORT = process.env.PORT || 4000
 const gamesController = require('./controllers/games-controller')
 const playersController = require('./controllers/players-controller')
 const userController = require('./controllers/auth-controllers')
