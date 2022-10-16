@@ -6,7 +6,7 @@ mongoose.connect(mongoURI)
 const gamesSchema = new mongoose.Schema({
     location: {type: String, required: true},
     time: {type: String, required: true},
-    players: {type: Number, required: true}
+    players: [{type: mongoose.Types.ObjectId, ref: "User"}]
 })
 
 const Game = mongoose.model('Game', gamesSchema)
