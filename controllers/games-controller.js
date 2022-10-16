@@ -38,7 +38,7 @@ router.put('/:gameId', async (req, res) => {
 
 router.delete('/:gameId', async (req, res) => {
     try {
-        res.json(await allGames.findByIdAndDelete(req.params.bookId))
+        res.json(await allGames.findByIdAndDelete(req.params.gameId))
     } catch (error) {
         console.log(error)
     }
