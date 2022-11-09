@@ -6,7 +6,9 @@ mongoose.connect(mongoURI)
 const userSchema = new mongoose.Schema({
     username: {type: String, required: true, unique: true},
     password: {type: String, required: true},
-    isAdmin: {type: Boolean, required: true, default: true}
+    isAdmin: {type: Boolean, required: true, default: true},
+    profilePic: {type: String, required: false},
+    bio: {type: String, required: false}
 },{
     timestamps: true,
     toJSON: {
